@@ -1,8 +1,9 @@
-import { GET_MONTHLY_DATA } from "./actiontypes";
+import { GET_MONTHLY_DATA, LOADING } from "./actiontypes";
   
   
   const initState = {
-    monthlydata: []
+    monthlydata: [],
+    isloading: false
   }
   
   const reducer = (state = initState , { type, payload })=> {
@@ -12,6 +13,11 @@ import { GET_MONTHLY_DATA } from "./actiontypes";
   
        return { ...state, monthlydata: payload } 
       }
+
+      case LOADING:{
+  
+        return { ...state, isloading: payload } 
+       }
   
       
       default: {

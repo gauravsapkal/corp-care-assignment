@@ -9,4 +9,3 @@ import reducer from "./reducer";
 const middlewares = applyMiddleware(thunk);
 
 export const store = createStore(reducer, middlewares);
-  
