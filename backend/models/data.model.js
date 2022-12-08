@@ -1,8 +1,10 @@
-import mongoose from "mongoose";
+const { default: mongoose } = require("mongoose");
 
 const monthlydataSchema = new mongoose.Schema({
   price: { type: Number },
   data: { type: Number }
 });
 
-export const Monthlydata = mongoose.model("monthlydata", monthlydataSchema);
+const Monthlydata = mongoose.model("monthlydata", monthlydataSchema);
+
+module.exports = Monthlydata;

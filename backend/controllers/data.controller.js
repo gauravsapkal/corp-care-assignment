@@ -1,12 +1,7 @@
-import { Monthlydata } from "../models/data.model.js";
+const Monthlydata = require("../models/data.model.js");
 
 
-
-
-
-
-
-export const monthlydata = async (req, res) => {
+const monthlydata = async (req, res) => {
   
     let data = await Monthlydata.find();
 
@@ -17,3 +12,5 @@ export const monthlydata = async (req, res) => {
 
 
 };
+
+module.exports = monthlydata;

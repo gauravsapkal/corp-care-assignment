@@ -1,8 +1,13 @@
-import express from "express";
-import cors from "cors";
-import { connect } from "./database/db.js";
-import { monthlydata } from "./controllers/data.controller.js";
+const express = require("express");
+const cors = require("cors");
 
+
+const connect = require("./database/db.js");
+const monthlydata = require("./controllers/data.controller.js");
+
+
+
+// `mongoose.set('strictQuery', false);`
 
 const app = express();
 
