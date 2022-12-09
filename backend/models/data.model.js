@@ -1,8 +1,7 @@
 const { default: mongoose } = require("mongoose");
 
 const monthlydataSchema = new mongoose.Schema({
-  price: { type: Number },
-  data: { type: Number }
+  value: { type: Number }
 });
 
 const Monthlydata = mongoose.model("monthlydata", monthlydataSchema);

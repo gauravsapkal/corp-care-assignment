@@ -19,11 +19,10 @@ import { GET_MONTHLY_DATA, LOADING } from "./actiontypes";
     export const fetchmonthlydata = () => (dispatch) => {
 
       dispatch(setloading(true));
-
       fetch(`https://corp-assignment.onrender.com/getmonthlydata`)
         .then((res) => res.json())
         .then((res)=> {
-          dispatch(getmonthlydata(res));
+          dispatch(getmonthlydata(res.data));
           dispatch(setloading(false));
       })
         .catch((err) => {

@@ -16,7 +16,7 @@ const Home = ()=>{
     const { monthlydata, isloading } = useSelector((state) => state);
 
     useEffect(()=>{
-        // dispatch(fetchmonthlydata());
+        dispatch(fetchmonthlydata());
         
         
     },[])
