@@ -1,9 +1,10 @@
-import { Box, Text } from "@chakra-ui/react";
+import { Box, Skeleton, Text } from "@chakra-ui/react";
+import { useSelector } from "react-redux";
 import Barchart from "./Barchart";
 
 
 const Earnings = () => {
-
+    const isloading = useSelector((state) => state.isloading);
 
     return (
         <Box w='289px' h='394px' border='1px solid white'>
@@ -31,7 +32,14 @@ const Earnings = () => {
                 >Your payment will be updated by the system.</Text>
 
 
-                <Barchart/>
+                {
+                    isloading ? <Skeleton w='231px' h='179px' position='absolute' left='23px' top='134px'>
+                    </Skeleton>
+                        :
+                        <Barchart />
+                }
+
+
             </Box>
         </Box>
     )
