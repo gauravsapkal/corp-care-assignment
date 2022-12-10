@@ -1,9 +1,10 @@
-import { GET_MONTHLY_DATA, GET_SMALL_DATA, LOADING } from "./actiontypes";
+import { GET_BAR_DATA, GET_MONTHLY_DATA, GET_SMALL_DATA, LOADING } from "./actiontypes";
   
   
   const initState = {
     monthlydata: [],
     smalllinedata:[],
+    bardata:[],
     isloading: false
   }
   
@@ -18,6 +19,12 @@ import { GET_MONTHLY_DATA, GET_SMALL_DATA, LOADING } from "./actiontypes";
       case GET_SMALL_DATA:{
   
         return { ...state, smalllinedata: payload } 
+       }
+
+
+       case GET_BAR_DATA:{
+  
+        return { ...state, bardata: payload } 
        }
 
       case LOADING:{

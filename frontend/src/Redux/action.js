@@ -1,4 +1,4 @@
-import { GET_MONTHLY_DATA, GET_SMALL_DATA, LOADING } from "./actiontypes";
+import { GET_BAR_DATA, GET_MONTHLY_DATA, GET_SMALL_DATA, LOADING } from "./actiontypes";
   
   
 
@@ -21,6 +21,11 @@ import { GET_MONTHLY_DATA, GET_SMALL_DATA, LOADING } from "./actiontypes";
   });
 
 
+  export const getbardata = (data) => ({
+    type: GET_BAR_DATA,
+    payload: data
+  });
+
 
 
     export const fetchmonthlydata = () => (dispatch) => {
@@ -41,7 +46,7 @@ import { GET_MONTHLY_DATA, GET_SMALL_DATA, LOADING } from "./actiontypes";
       export const fetchsmalllinechartdata = () => (dispatch) => {
 
         dispatch(setloading(true));
-        fetch(`http://localhost:8080/smalllinedata`)
+        fetch(`https://corp-assignment.onrender.com/smalllinedata`)
           .then((res) => res.json())
           .then((res)=> {
             dispatch(getsmalldata(res.data));
@@ -51,3 +56,20 @@ import { GET_MONTHLY_DATA, GET_SMALL_DATA, LOADING } from "./actiontypes";
             console.log(err+" "+"Error in fetchmonthlydata")
           });
         };
+
+
+
+
+        export const fetchbardata = () => (dispatch) => {
+
+          dispatch(setloading(true));
+          fetch(`https://corp-assignment.onrender.com/bardata`)
+            .then((res) => res.json())
+            .then((res)=> {
+              dispatch(getbardata(res.data));
+              dispatch(setloading(false));
+          })
+            .catch((err) => {
+              console.log(err+" "+"Error in fetchmonthlydata")
+            });
+          };

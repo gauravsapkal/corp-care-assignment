@@ -53,7 +53,7 @@ const options = {
 }
 
 const Linechart = () => {
-    const { monthlydata, isloading } = useSelector((state) => state);
+    const { monthlydata } = useSelector((state) => state);
 
     const data = {
         labels: ['Nov 1', 'Nov 4', 'Nov 8', 'Nov 12', 'Nov 16'],
@@ -61,7 +61,7 @@ const Linechart = () => {
             {
                 label: '',
                 data: monthlydata.map((elem)=>elem.value),
-                backgroundColor: 'skyblue',
+                backgroundColor: '#acafff',
                 borderColor: 'blue',
                 tension: '0.4',
                 fill: true,

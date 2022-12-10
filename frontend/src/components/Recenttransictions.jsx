@@ -1,10 +1,11 @@
-import { Box, Flex, Image, Text } from "@chakra-ui/react";
+import { Box, Flex, Image, Skeleton, Text } from "@chakra-ui/react";
+import { useSelector } from "react-redux";
 import Singletransition from "./Singletransition";
 import Smalllinechart from "./Smalllinechart";
 
 
 const Recenttransictions = () => {
-
+    const isloading = useSelector((state) => state.isloading);
 
     return (
         <Flex w='655px' h='394px' position='absolute' left='292px' top='529px'
@@ -80,10 +81,17 @@ align-items: center; */}
                         >Year</Text>
                     </Flex>
 
-                    <Smalllinechart />
+
+
+                    {
+                        isloading ? <Skeleton w='237px' h='141.5px' position='absolute' left='27px' top='172px'>
+                        </Skeleton>
+                            :
+                            <Smalllinechart />
+                    }
                 </Box>
 
-                
+
 
             </Box>
 

@@ -1,4 +1,5 @@
 import { Box, Text } from "@chakra-ui/react";
+import Barchart from "./Barchart";
 
 
 const Earnings = () => {
@@ -12,7 +13,7 @@ const Earnings = () => {
 
             <Box h='344px' w='289px' mt='20px'
                 boxShadow='rgba(0, 0, 0, 0.24) 0px 3px 8px'
-                border='1px solid white'
+                border='1px solid white' position='relative'
             >
 
                 <Text w='124px' h='10px' ml='83px' mt='32px' fontFamily='Urbanist' border='1px solid white'
@@ -30,6 +31,7 @@ const Earnings = () => {
                 >Your payment will be updated by the system.</Text>
 
 
+                <Barchart/>
             </Box>
         </Box>
     )

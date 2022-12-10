@@ -40,15 +40,11 @@ const options = {
 
             grid: {
                 display: false
+            },
+            ticks: {
+                display: false
             }
-        },
-        yAxes: [
-            {
-                ticks: {
-                    beginAtZero: true
-                }
-            }
-        ]
+        }
     }
 }
 
@@ -61,11 +57,10 @@ const Smalllinechart = () => {
         labels: ['Nov 1', 'Nov 4', 'Nov 8', 'Nov 12', 'Nov 16'],
         datasets: [
             {
-                label: '',
                 data: smalllinedata.map((elem)=>elem.value),
-                backgroundColor: 'skyblue',
+                backgroundColor: '#acafff',
                 borderColor: 'blue',
-                tension: '0.4',
+                tension: '0.5',
                 fill: true,
                 pointStyle: 'dash'
             }
