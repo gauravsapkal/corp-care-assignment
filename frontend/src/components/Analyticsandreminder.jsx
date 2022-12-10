@@ -14,55 +14,54 @@ const Analyticsandreminder = () => {
     return (
         <Flex w='655px' h='319px' border='1px solid white' justifyContent='space-between'>
 
+            <Box w='418px' h='319px' border='1px solid white'>
 
-            {
-                isloading ? <Skeleton w='418px' h='319px'>
-                </Skeleton>
-                    :
-                    <Box w='418px' h='319px' border='1px solid white'>
+                <Text w='118px' h='30px' fontFamily='Urbanist' fontWeight='800' fontSize='14px'
+                >Analytics</Text>
 
-                        <Text w='118px' h='30px' fontFamily='Urbanist' fontWeight='800' fontSize='14px'
-                        >Analytics</Text>
+                <Box w='418px' h='269px' border='1px solid white' mt='20px'
+                    boxShadow='rgba(0, 0, 0, 0.24) 0px 3px 8px'
+                >
 
-                        <Box w='418px' h='269px' border='1px solid white' mt='20px'
-                            boxShadow='rgba(0, 0, 0, 0.24) 0px 3px 8px'
+                    <Flex w='348px' h='18px' border='1px solid white' alignItems='center'
+                        ml='32px' mt='25px' justifyContent='space-between'
+                    >
+                        <Button borderRadius='25px' w='73px' h='18px' bg='#525252' color='white'
+                            fontSize='8px' _hover={{ bg: '#525252' }}
+                            _active={{ bg: '#525252' }}
+                            fontWeight='800'
                         >
+                            Income <Text ml='5px' fontWeight='800'>{`↓`}</Text>
+                        </Button>
 
-                            <Flex w='348px' h='18px' border='1px solid white' alignItems='center'
-                                ml='32px' mt='25px' justifyContent='space-between'
+                        <Flex alignItems='center'>
+                            <Text w='49px' h='9px' fontWeight='500' fontSize='8px' color='#B1B1B1'
+
+                            >Sort by</Text>
+
+                            <Button borderRadius='25px' w='73px' h='18px' bg='white' color='black'
+                                fontSize='8px' _hover={{ bg: 'white' }}
+                                _active={{ bg: 'white' }}
+                                boxShadow='rgba(0, 0, 0, 0.24) 0px 3px 8px'
+                                fontWeight='800'
                             >
-                                <Button borderRadius='25px' w='73px' h='18px' bg='#525252' color='white'
-                                    fontSize='8px' _hover={{ bg: '#525252' }}
-                                    _active={{ bg: '#525252' }}
-                                    fontWeight='800'
-                                >
-                                    Income <Text ml='5px' fontWeight='800'>{`↓`}</Text>
-                                </Button>
+                                Month <Text ml='5px' fontWeight='800'>{`↓`}</Text>
+                            </Button>
+                        </Flex>
+                    </Flex>
 
-                                <Flex alignItems='center'>
-                                    <Text w='49px' h='9px' fontWeight='500' fontSize='8px' color='#B1B1B1'
+                </Box>
 
-                                    >Sort by</Text>
-
-                                    <Button borderRadius='25px' w='73px' h='18px' bg='white' color='black'
-                                        fontSize='8px' _hover={{ bg: 'white' }}
-                                        _active={{ bg: 'white' }}
-                                        boxShadow='rgba(0, 0, 0, 0.24) 0px 3px 8px'
-                                        fontWeight='800'
-                                    >
-                                        Month <Text ml='5px' fontWeight='800'>{`↓`}</Text>
-                                    </Button>
-                                </Flex>
-                            </Flex>
-
-                        </Box>
-
-                            <Linechart/>
-                            
+                {
+                    isloading ? <Skeleton w='370px' h='180px' position='absolute' left='32px' top='122px'>
+                    </Skeleton>
+                        :
+                        <Linechart />
+                }
 
 
-                    </Box>
-            }
+
+            </Box>
 
             <Box w='209px' h='319px' border='1px solid white'>
                 <Text w='118px' h='30px' fontFamily='Urbanist' fontWeight='800' fontSize='14px'

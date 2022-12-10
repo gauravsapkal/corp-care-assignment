@@ -4,6 +4,8 @@ const cors = require("cors");
 
 const connect = require("./database/db.js");
 const monthlydata = require("./controllers/data.controller.js");
+const smalllinechartdata = require("./controllers/smallline.controller.js");
+
 
 
 
@@ -17,6 +19,7 @@ app.use(express.json());
 
 app.get("/getmonthlydata", monthlydata);
 
+app.get("/smalllinedata", smalllinechartdata);
 
 connect().then(() => {
   app.listen(8080, () => {

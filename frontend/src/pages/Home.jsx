@@ -5,7 +5,7 @@ import Leftbar from "../components/Leftbar";
 import Rightsection from "../components/Rightsection";
 
 
-import { fetchmonthlydata } from "../Redux/action";
+import { fetchmonthlydata, fetchsmalllinechartdata } from "../Redux/action";
 
 
 const Home = ()=>{
@@ -17,8 +17,7 @@ const Home = ()=>{
 
     useEffect(()=>{
         dispatch(fetchmonthlydata());
-        
-        
+        dispatch(fetchsmalllinechartdata());
     },[])
     
 
